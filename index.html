@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- font awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.css" integrity="sha512-tx5+1LWHez1QiaXlAyDwzdBTfDjX07GMapQoFTS74wkcPMsI3So0KYmFe6EHZjI8+eSG0ljBlAQc3PQ5BTaZtQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Jquery framework -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+    <!-- cdn for tailwind css/ stylessheet for custom css files -->
+    <link rel="stylesheet" href="dist/source-output.css">
+    <link rel="stylesheet" href="static/styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- desktop icon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="starter-code/assets/favicon-32x32.png">
+    
+    <!-- desktop title -->
+    <title>Frontend Mentor | GitHub user search app</title>
+  </head>
+
+
+
+  <body class="bg-lightModeColors-whiteSmokish">
+
+    <!-- headers -->
+    <header class="flex flex-row items-center justify-between">
+      <p class="company-name text-lightModeColors-reallyDarkBlue font-bold">devfinder</p>
+      <div class="preferred-clr-theme-container flex flex-row items-center gap-x-2">
+        <p id="theme-clr-txt" class="uppercase text-lightModeColors-darkBlue">dark</p>
+        <img src="starter-code/assets/icon-moon.svg" alt="moon icon" id="theme-icon">
+      </div>
+    </header>
+
+    <!-- search container -->
+    <form action="" class="user-search-form">
+      <div class="search-container">
+        <img src="starter-code/assets/icon-search.svg" alt="search icon">
+        <label for="search-user">
+          <input type="text" id="search-user" placeholder="Search GitHub username…" class="text-lightModeColors-darkBlue">
+        </label>
+        <input type="submit" value="Search" name="Search" id="search-btn">
+      </div>
+    </form>
+
+    <!-- preloader for contents/ seearch results -->
+    <div class="preloader-container">
+      <div class="wrap">
+        <div class="ball" style="display:none;"></div>
+        <div class="ball" style="display:none;"></div>
+        <div class="ball" style="display:none;"></div>
+      </div>
+    </div>
+
+
+    <!-- results from search container -->
+    <div class="search-results-container flex flex-col gap-y-7" style="display: none;">
+
+      <!-- users profile and information -->
+      <div class="profile-img-user-container">
+        <!-- users profile picture -->
+        <img src="starter-code/assets/test.jpeg" alt="users-profile picture" id="user-image" class="user-profile-img">
+
+        <!-- users profile name and when joined -->
+        <div class="user-sens-info">
+          <p id="user-nickname" class="font-bold text-lightModeColors-reallyDarkBlue">The Octocat</p>
+          <a href="" target="_blank" id="username" class="font-normal text-lightModeColors-neatBlue">@octocat</a>
+          <p id="user-dateJoined" class="text-lightModeColors-grayish font-normal">Joined 25 Jan 2011</p>
+        </div>
+      </div>
+
+      <!-- users bio paragraph -->
+      <p id="users-bio" class="font-normal leading-6 text-lightModeColors-darkBlue">
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
+      </p>
+
+      <!-- users following, followers, repos container -->
+      <div class="global-stats-container flex flex-row justify-around">
+        <!-- repos container -->
+        <div class="Repos-containerStyle flex flex-col items-center  gap-y-2">
+          <p id="user-repos" class="font-normal">Repos</p>
+          <p id="user-repos-count" class="font-bold">8</p>
+        </div>
+        <!-- followers container -->
+        <div class="Followers-containerStyle flex flex-col items-center  gap-y-2">
+          <p id="user-followers" class="font-normal">Followers</p>
+          <p id="user-followers-count" class="font-bold">3938</p>
+        </div>
+        <!-- following container -->
+        <div class="Following-containerStyle flex flex-col items-center  gap-y-2">
+          <p id="user-following" class="">Following</p>
+          <p id="user-following-count" class="font-bold">9</p>
+        </div>
+      </div>
+
+
+      <!-- users gitub location, links, organization container -->
+
+      <div class="users-public-profile-container">
+        <!-- location and website link container  -->
+        <div class="user-loc-link-container">
+          <!-- location container -->
+          <div class="location-container flex flex-row gap-x-5">
+            <img src="starter-code/assets/icon-location.svg" alt="location icon" id="location-icon">
+            <p id="user-location" class="">San Francisco</p>
+          </div>
+          <!-- user website link -->
+          <div class="website-container flex flex-row gap-x-3.5">
+            <img src="starter-code/assets/icon-website.svg" alt="website icon" id="website-icon">
+            <a href="" id="user-website" target="_blank" class="">https://github.blog</a>
+          </div>
+        </div>
+
+        <!-- twitter and organization container  -->
+        <div class="user-twitt-org-container">
+          <!-- location container -->
+          <div class="twitter-container flex flex-row gap-x-3.5">
+            <img src="starter-code/assets/icon-twitter.svg" alt="twitter icon" id="twitter-icon">
+            <a id="user-twitter" href="" target="_blank"  class="">Not Available</a>
+          </div>
+          <!-- user organization name -->
+          <div class="organization-container flex flex-row gap-x-3.5">
+            <img src="starter-code/assets/icon-company.svg" alt="organization icon" id="organization-icon">
+            <p id="user-organization" class="">@github</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- error expected -->
+    <div class="error-container" style="display: none;">
+      <p class="error-message text-center font-bold leading-4">( 4_0_4 )</p>
+      <p id="error-txt" class="text-center font-normal">User Not Found</p>
+    </div>
+
+    
+
+
+    <script src="dist/api.js"></script>
+    <script src="dist/toggleTheme.js"></script>
+  </body>
+</html>
