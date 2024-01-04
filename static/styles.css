@@ -48,6 +48,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background-color: #F6F8FF;
 }
 @media (min-width: 768px) and (max-width: 1440px) {
   .search-container {
@@ -64,6 +65,7 @@ header {
 }
 .search-container > label {
   width: 60%;
+  background-color: transparent;
 }
 .search-container > label > input#search-user {
   cursor: pointer;
@@ -72,7 +74,8 @@ header {
   font-size: clamp(0.8125rem, 0.85vw, 0.9rem);
   border: none;
   height: 100%;
-  background-color: #F6F8FF;
+  background-color: transparent;
+  outline: none;
 }
 @media (min-width: 768px) {
   .search-container > label > input#search-user {

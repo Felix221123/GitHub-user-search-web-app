@@ -194,21 +194,21 @@ $(function () {
 
 
     // Handle click events on a paragraph with ID "theme-clr-txt"
-    $("img#theme-icon").on('click', function () {
-        const isDarkMode = $("img#theme-icon").hasClass("active");
+    $(".preferred-clr-theme-container").on('click', function () {
+        const isDarkMode = $(".preferred-clr-theme-container").hasClass("active");
         console.log("the moon is clicked");
         
 
         if (!isDarkMode) {
             // Add the "active" class
-            $("img#theme-icon").addClass("active");
+            $(".preferred-clr-theme-container").addClass("active");
             
             // Apply dark mode styles
             darkthemeDisplay();
         }
         else {
             // Remove the "active" class
-            $("img#theme-icon").removeClass("active");
+            $(".preferred-clr-theme-container").removeClass("active");
 
             //apply white theme color
             whitethemeDisplay()
