@@ -106,18 +106,24 @@ $(document).ready(function () {
             }
 
             //user repo count
-            if (userInfo.userRepositories) {
+            if (userInfo.userRepositories > 0) {
                 $("#user-repos-count").text(userInfo.userRepositories)
+            } else {
+                $("#user-repos-count").text(0)
             }
 
             //user followers count
-            if (userInfo.userFollowers) {
+            if (userInfo.userFollowers > 0) {
                 $("#user-followers-count").text(userInfo.userFollowers)
+            } else {
+                $("#user-followers-count").text(0)
             }
 
             //user following count
-            if (userInfo.userFollowing) {
+            if (userInfo.userFollowing > 0) {
                 $("#user-following-count").text(userInfo.userFollowing)
+            } else {
+                $("#user-following-count").text(0)
             }
 
             //user location
